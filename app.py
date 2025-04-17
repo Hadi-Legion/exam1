@@ -27,7 +27,7 @@ if show_stats:
 
 if show_corr:
     st.subheader("📊 Correlation Matrix")
-    corr = df.corr()
+    corr = df.select_dtypes(include='number').corr()
     st.dataframe(corr)
 
     fig, ax = plt.subplots()
